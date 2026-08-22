@@ -1,42 +1,15 @@
 const root = document.documentElement;
-const themeToggle = document.querySelector(".theme-toggle");
+const toggle = document.querySelector(".theme-toggle");
 const savedTheme = localStorage.getItem("theme");
-const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+if (savedTheme === "dark" || (!savedTheme && matchMedia("(prefers-color-scheme: dark)").matches)) {
   root.dataset.theme = "dark";
 }
 
-themeToggle.addEventListener("click", () => {
-  const isDark = root.dataset.theme === "dark";
-
-  if (isDark) {
-    delete root.dataset.theme;
-    localStorage.setItem("theme", "light");
-  } else {
-    root.dataset.theme = "dark";
-    localStorage.setItem("theme", "dark");
-  }
+toggle?.addEventListener("click", () => {
+  const theme = root.dataset.theme === "dark" ? "light" : "dark";
+  root.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
-
-const revealElements = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries, currentObserver) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          currentObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 },
-  );
-
-  revealElements.forEach((element) => observer.observe(element));
-} else {
-  revealElements.forEach((element) => element.classList.add("visible"));
-}

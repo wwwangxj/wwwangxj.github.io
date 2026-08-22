@@ -2,15 +2,16 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="王希嘉（Xijia Wang）的个人网站。吉林大学计算机科学与技术专业本科生，记录学习、项目与成长。"
-    />
-    <meta name="theme-color" content="#f5f1e8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="王希嘉（Xijia Wang）的个人网站。吉林大学计算机科学与技术专业本科生，记录学习、项目与成长。" />
+    <meta name="theme-color" content="#f7faff" />
     <title>王希嘉 · Xijia Wang</title>
+    <!-- 单独下载 index.html 时，页面仍保留基础排版。 -->
+    <style id="fallback">
+      html{scroll-behavior:smooth}body{margin:0;color:#10233f;background:#f7faff;font-family:Arial,"Microsoft YaHei",sans-serif;line-height:1.7}header,main,footer{width:min(1120px,calc(100% - 40px));margin:auto}header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}nav{display:flex;gap:20px}section{padding:80px 0;border-bottom:1px solid #dbe7f7}h1{font-size:clamp(52px,9vw,100px);line-height:1.05;margin:20px 0;color:#075bd8}h2{font-size:clamp(32px,5vw,54px);line-height:1.2}a{color:#075bd8}.skip-link{position:absolute;left:-9999px}
+    </style>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" onload="document.getElementById('fallback').disabled=true" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -19,215 +20,131 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="返回首页">
         <span class="brand-mark">XW</span>
-        <span class="brand-name">Xijia Wang</span>
+        <span><strong>Xijia Wang</strong><small>王希嘉</small></span>
       </a>
-
       <nav class="site-nav" aria-label="主导航">
         <a href="#about">关于</a>
         <a href="#experience">经历</a>
         <a href="#projects">项目</a>
         <a href="#contact">联系</a>
       </nav>
-
-      <button class="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
-        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
-        </svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.5 14.2A8 8 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"></path>
-        </svg>
-      </button>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式"><span aria-hidden="true">◐</span></button>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-copy reveal">
-          <p class="eyebrow">JLU · COMPUTER SCIENCE · 2029</p>
-          <h1>你好，我是<br /><span>王希嘉。</span></h1>
-          <p class="hero-intro">
-            吉林大学计算机科学与技术专业本科生。我正在探索计算机科学的不同方向，也在这里记录学习、实践与成长。
-          </p>
+          <p class="kicker"><span></span> JILIN UNIVERSITY · CS · 2029</p>
+          <h1>王希嘉<br /><em>Xijia Wang</em></h1>
+          <p class="hero-intro">吉林大学计算机科学与技术专业本科生。正在探索计算机科学的不同方向，也在这里记录学习、实践与成长。</p>
           <div class="hero-actions">
-            <a class="button primary" href="#projects">查看我的项目</a>
-            <a class="button secondary" href="#contact">与我联系</a>
+            <a class="button primary" href="#projects">查看项目 <span>→</span></a>
+            <a class="button secondary" href="mailto:wangxj2425@mails.jlu.edu.cn">联系我</a>
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-hidden="true">
-          <div class="code-card">
-            <div class="code-card-top"><span></span><span></span><span></span></div>
-            <pre><code><span class="code-muted">// learning in public</span>
-<span class="code-keyword">const</span> xijia = {
-  university: <span class="code-string">"Jilin University"</span>,
-  major: <span class="code-string">"Computer Science"</span>,
-  status: <span class="code-string">"Always learning"</span>
-};</code></pre>
+        <aside class="status-card reveal" aria-label="个人状态">
+          <div class="status-top"><span class="status-dot"></span><span>NOW / 现在</span></div>
+          <p class="status-title">打好基础，<br />保持好奇。</p>
+          <div class="status-list">
+            <div><span>学校</span><strong>吉林大学</strong></div>
+            <div><span>专业</span><strong>计算机科学与技术</strong></div>
+            <div><span>状态</span><strong>本科在读</strong></div>
           </div>
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-        </div>
+          <div class="card-code" aria-hidden="true">01 <span>/</span> 04</div>
+        </aside>
       </section>
 
-      <section class="section about" id="about">
-        <div class="section-heading reveal">
-          <p class="section-index">01 / ABOUT</p>
-          <h2>保持好奇，认真积累。</h2>
-        </div>
-        <div class="about-grid">
-          <p class="about-lead reveal">
-            我希望把这个网站变成一份持续更新的成长档案，而不只是一张静态简历。
-          </p>
-          <div class="about-copy reveal">
-            <p>
-              我是王希嘉，目前就读于吉林大学计算机科学与技术专业，预计于 2029 年毕业。进入大学前，我曾接触信息学竞赛与机器人比赛，这些经历让我开始享受拆解问题、设计方案并亲手实现的过程。
-            </p>
-            <p>
-              现在，我正在打好计算机科学基础，并逐步寻找愿意长期投入的研究与职业方向。这里会陆续收录我的课程学习、项目实践、技术文章与阶段思考。
-            </p>
+      <section class="section" id="about">
+        <div class="section-label reveal"><span>01</span> ABOUT</div>
+        <div class="section-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">关于我</p>
+            <h2>把成长记录下来，<br />让每一步都有迹可循。</h2>
+          </div>
+          <div class="body-copy reveal">
+            <p class="lead">我希望把这个网站变成一份持续更新的成长档案，而不只是一张静态简历。</p>
+            <p>我是王希嘉，目前就读于吉林大学计算机科学与技术专业，预计于 2029 年毕业。进入大学前，我曾接触信息学竞赛与机器人比赛，这些经历让我开始享受拆解问题、设计方案并亲手实现的过程。</p>
+            <p>现在，我正在打好计算机科学基础，并逐步寻找愿意长期投入的研究与职业方向。这里会陆续收录我的课程学习、项目实践、技术文章与阶段思考。</p>
           </div>
         </div>
-
         <div class="facts reveal">
-          <div class="fact">
-            <span class="fact-label">学校</span>
-            <strong>吉林大学</strong>
-          </div>
-          <div class="fact">
-            <span class="fact-label">专业</span>
-            <strong>计算机科学与技术</strong>
-          </div>
-          <div class="fact">
-            <span class="fact-label">预计毕业</span>
-            <strong>2029</strong>
-          </div>
-          <div class="fact">
-            <span class="fact-label">当前状态</span>
-            <strong>本科在读</strong>
-          </div>
+          <div><span>UNIVERSITY</span><strong>吉林大学</strong></div>
+          <div><span>MAJOR</span><strong>计算机科学与技术</strong></div>
+          <div><span>GRADUATION</span><strong>2029</strong></div>
+          <div><span>STATUS</span><strong>本科在读</strong></div>
         </div>
       </section>
 
-      <section class="section experience" id="experience">
-        <div class="section-heading reveal">
-          <p class="section-index">02 / EXPERIENCE</p>
-          <h2>经历与起点</h2>
-        </div>
-
+      <section class="section" id="experience">
+        <div class="section-label reveal"><span>02</span> EXPERIENCE</div>
+        <div class="section-heading compact reveal"><p class="eyebrow">经历</p><h2>正在展开的学习旅程。</h2></div>
         <div class="timeline">
           <article class="timeline-item reveal">
-            <div class="timeline-meta">
-              <span>2025 — 2029</span>
-              <span>长春</span>
-            </div>
-            <div class="timeline-content">
-              <h3>计算机科学与技术 · 本科</h3>
-              <p class="timeline-place">吉林大学</p>
+            <div class="time"><span>01</span><time>2025 — 2029</time></div>
+            <div class="timeline-main">
+              <p class="meta">吉林大学 · 长春</p><h3>计算机科学与技术 · 本科</h3>
               <p>系统学习计算机科学基础，持续拓展技术视野，并通过课程和个人项目沉淀实践能力。</p>
             </div>
           </article>
-
           <article class="timeline-item reveal">
-            <div class="timeline-meta">
-              <span>大学以前</span>
-              <span>探索阶段</span>
-            </div>
-            <div class="timeline-content">
-              <h3>信息学竞赛与机器人比赛</h3>
-              <p class="timeline-place">早期技术实践</p>
+            <div class="time"><span>02</span><time>大学以前</time></div>
+            <div class="timeline-main">
+              <p class="meta">早期技术实践</p><h3>信息学竞赛与机器人比赛</h3>
               <p>接触算法思维、程序设计和机器人实践。具体比赛名称、作品及成果将在整理后补充。</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section projects" id="projects">
-        <div class="section-heading projects-heading reveal">
-          <div>
-            <p class="section-index">03 / PROJECTS</p>
-            <h2>项目与作品</h2>
-          </div>
-          <p>这里将记录从课堂作业到个人探索的完整过程。</p>
+      <section class="section" id="projects">
+        <div class="section-label reveal"><span>03</span> PROJECTS</div>
+        <div class="section-heading compact reveal">
+          <p class="eyebrow">项目</p><h2>从第一个作品开始。</h2>
+          <p class="heading-note">这里将记录从课堂作业到个人探索的完整过程。</p>
         </div>
-
         <div class="project-grid">
           <article class="project-card featured reveal">
-            <div class="project-number">01</div>
-            <div>
-              <p class="project-type">PERSONAL WEBSITE</p>
-              <h3>个人网站 v1.0</h3>
-              <p>从零搭建的个人主页，用于整理学习经历、项目作品和长期成长记录。</p>
-              <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            </div>
+            <div class="project-top"><span>FEATURED</span><span>01</span></div>
+            <div><p class="project-icon">⌘</p><h3>个人网站 v1.0</h3><p>从零搭建的个人主页，用于整理学习经历、项目作品和长期成长记录。</p><ul class="tags" aria-label="技术标签"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
           </article>
-
-          <article class="project-card placeholder reveal">
-            <div class="project-number">02</div>
-            <div>
-              <p class="project-type">COMING SOON</p>
-              <h3>下一个项目</h3>
-              <p>新的课程项目或个人实践会在这里出现。</p>
-            </div>
+          <article class="project-card reveal">
+            <div class="project-top"><span>COMING SOON</span><span>02</span></div>
+            <div><h3>下一个项目</h3><p>新的课程项目或个人实践会在这里出现。</p></div>
           </article>
-
-          <article class="project-card placeholder reveal">
-            <div class="project-number">03</div>
-            <div>
-              <p class="project-type">COMING SOON</p>
-              <h3>持续构建中</h3>
-              <p>不急着填满，先认真完成每一个作品。</p>
-            </div>
+          <article class="project-card reveal">
+            <div class="project-top"><span>COMING SOON</span><span>03</span></div>
+            <div><h3>持续构建中</h3><p>不急着填满，先认真完成每一个作品。</p></div>
           </article>
         </div>
       </section>
 
       <section class="section notes" id="notes">
-        <div class="section-heading reveal">
-          <p class="section-index">04 / NOTES</p>
-          <h2>学习笔记</h2>
-        </div>
-        <div class="empty-state reveal">
-          <span class="empty-icon">✦</span>
-          <div>
-            <h3>第一篇文章正在路上</h3>
-            <p>未来会分享课程总结、技术实践与阶段复盘。</p>
-          </div>
+        <div class="section-label reveal"><span>04</span> NOTES</div>
+        <div class="empty-note reveal">
+          <div><p class="eyebrow">学习笔记</p><h2>第一篇文章正在路上。</h2></div>
+          <p>未来会分享课程总结、技术实践与阶段复盘。</p><span class="note-mark" aria-hidden="true">✦</span>
         </div>
       </section>
 
       <section class="section contact" id="contact">
-        <div class="contact-copy reveal">
-          <p class="section-index">05 / CONTACT</p>
-          <h2>欢迎交流。</h2>
-          <p>无论是学习讨论、项目合作，还是一声问候，都可以通过邮件联系我。</p>
-        </div>
-        <div class="contact-links reveal">
-          <a href="mailto:wangxj2425@mails.jlu.edu.cn">
-            <span>学校邮箱</span>
-            <strong>wangxj2425@mails.jlu.edu.cn</strong>
-            <span class="arrow">↗</span>
-          </a>
-          <a href="https://github.com/wwwangxj" target="_blank" rel="noopener noreferrer">
-            <span>GitHub</span>
-            <strong>github.com/wwwangxj</strong>
-            <span class="arrow">↗</span>
-          </a>
-          <div class="future-links" aria-label="待补充的个人账号">
-            <span>Gitee · 知乎</span>
-            <strong>账号链接待补充</strong>
-          </div>
-          <div class="future-links" aria-label="待补充的简历">
-            <span>Résumé</span>
-            <strong>中英文简历待补充</strong>
+        <div class="section-label reveal"><span>05</span> CONTACT</div>
+        <div class="contact-grid">
+          <div class="section-heading reveal"><p class="eyebrow">联系</p><h2>欢迎交流。</h2><p class="heading-note">学习讨论、项目合作，或者一声问候，都可以通过邮件联系我。</p></div>
+          <div class="contact-links reveal">
+            <a href="mailto:wangxj2425@mails.jlu.edu.cn"><span><small>EMAIL</small><strong>学校邮箱</strong></span><b>wangxj2425@mails.jlu.edu.cn</b><i>↗</i></a>
+            <a href="https://github.com/wwwangxj" target="_blank" rel="noopener noreferrer"><span><small>CODE</small><strong>GitHub</strong></span><b>github.com/wwwangxj</b><i>↗</i></a>
+            <div class="future-link"><span><small>SOCIAL</small><strong>Gitee · 知乎</strong></span><b>待补充</b></div>
+            <div class="future-link"><span><small>RÉSUMÉ</small><strong>中英文简历</strong></span><b>待补充</b></div>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© <span id="year"></span> Xijia Wang</p>
-      <p>Designed &amp; built with curiosity.</p>
-      <a href="#top">回到顶部 ↑</a>
+      <p>© <span id="year">2026</span> Xijia Wang</p>
+      <p>吉林大学 · 计算机科学与技术</p>
+      <a href="#top">返回顶部 ↑</a>
     </footer>
   </body>
 </html>
